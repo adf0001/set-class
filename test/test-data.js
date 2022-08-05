@@ -1,6 +1,6 @@
 
 //global variable, for html page, refer tpsvr @ npm.
-set_class = require("../set-class.js");
+set_class = require("../index.js");
 
 //test tool
 function _addCssText(cssText) {
@@ -28,13 +28,31 @@ module.exports = {
 			"<div>" +
 			"<span>111 </span><span>222 </span><span>333 </span><span>444 </span><br>" +
 			"<label><input type=checkbox " +
-			"	onchange=\"var chs=parentNode.parentNode.childNodes;set_class([chs[0],chs[2]],this.checked?'selected':'',this.checked?'':'selected',null,'ht'); set_class([chs[1],chs[3]],this.checked?'':'selected',this.checked?'selected':'',null,'ht');\"" +
+			"	onchange=\"var chs=parentNode.parentNode.childNodes;set_class.set([chs[0],chs[2]],this.checked?'selected':'',this.checked?'':'selected',null,'ht'); set_class.set([chs[1],chs[3]],this.checked?'':'selected',this.checked?'selected':'',null,'ht');\"" +
 			"></input>toggle by set()</label><br>" +
 			"<label><input type=checkbox " +
 			"	onchange=\"var chs=parentNode.parentNode.childNodes;set_class.setByElement('selected',this.checked?[chs[0],chs[2]]:[chs[1],chs[3]],this.checked?[chs[1],chs[3]]:[chs[0],chs[2]],null,'ht');\"" +
 			"></input>toggle by setByElement()</label><br>" +
 			"<label><input type=checkbox " +
 			"	onchange=\"var chs=parentNode.parentNode.childNodes;set_class.setByElement('selected',null,null,[chs[0],chs[1],chs[2],chs[3]],'ht');\"" +
+			"></input>setByElement() toggle</label><br>" +
+			"</div>";
+	},
+
+	"bindFrame()": function (done) {
+		ht_set_class = set_class.bindFrame("ht");
+
+		return "<span class='ht selected'>css .ht.selected style sample</span>" +
+			"<div>" +
+			"<span>111 </span><span>222 </span><span>333 </span><span>444 </span><br>" +
+			"<label><input type=checkbox " +
+			"	onchange=\"var chs=parentNode.parentNode.childNodes;ht_set_class.set([chs[0],chs[2]],this.checked?'selected':'',this.checked?'':'selected'); ht_set_class.set([chs[1],chs[3]],this.checked?'':'selected',this.checked?'selected':'');\"" +
+			"></input>toggle by set()</label><br>" +
+			"<label><input type=checkbox " +
+			"	onchange=\"var chs=parentNode.parentNode.childNodes;ht_set_class.setByElement('selected',this.checked?[chs[0],chs[2]]:[chs[1],chs[3]],this.checked?[chs[1],chs[3]]:[chs[0],chs[2]]);\"" +
+			"></input>toggle by setByElement()</label><br>" +
+			"<label><input type=checkbox " +
+			"	onchange=\"var chs=parentNode.parentNode.childNodes;ht_set_class.setByElement('selected',null,null,[chs[0],chs[1],chs[2],chs[3]]);\"" +
 			"></input>setByElement() toggle</label><br>" +
 			"</div>";
 	},

@@ -26,8 +26,8 @@ set_class = require("set-class");
 <!-- setClass(elList, addClassList, removeClassList, toggleClassList, frameName)-->
 <label><input type=checkbox 
 	onchange="var chs=parentNode.parentNode.childNodes;
-	set_class([chs[0],chs[2]],this.checked?'selected':'',this.checked?'':'selected',null,'ht');
-	set_class([chs[1],chs[3]],this.checked?'':'selected',this.checked?'selected':'',null,'ht');"
+	set_class.set([chs[0],chs[2]],this.checked?'selected':'',this.checked?'':'selected',null,'ht');
+	set_class.set([chs[1],chs[3]],this.checked?'':'selected',this.checked?'selected':'',null,'ht');"
 ></input>toggle by set()</label><br>
 
 <!-- var setByElement(classList, addElList, removeElList, toggleElList, frameName) -->
