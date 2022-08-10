@@ -1,4 +1,5 @@
-﻿
+﻿// set-class @ npm, set element class tool.
+
 var setClassList = function (op, elList, classList1 /*, classList2, ... */) {
 	//arguments
 	if (!(elList instanceof Array)) elList = [elList];
