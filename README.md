@@ -36,10 +36,11 @@ set_class = require("set-class");
 	set_class.setByElement('selected',this.checked?[chs[0],chs[2]]:[chs[1],chs[3]],
 	this.checked?[chs[1],chs[3]]:[chs[0],chs[2]],null,'ht');"
 ></input>toggle by setByElement()</label><br>
+
 <label><input type=checkbox 
 	onchange="var chs=parentNode.parentNode.childNodes;
 	set_class.setByElement('selected',null,null,[chs[0],chs[1],chs[2],chs[3]]);"
-></input>setByElement() toggle	//may fail at firstly click</label><br>
+></input>setByElement() toggle</label><br>
 </div>;
 
 ```
